@@ -1,0 +1,39 @@
+{
+  "notifications": [
+    {
+      "id": "59d73668-1422-11ee-be56-0242ac120002",
+      "description": "Um novo vídeo de Mayk Brito foi publicado no ExpertsClub! Vem conferir!",
+      "type": "new-content",
+      "date": "2023-06-27T20:45:00.000Z",
+      "asRead": false
+    },
+    {
+      "id": "60fddf46-1422-11ee-be56-0242ac120002",
+      "description": "Você recebeu um convite para fazer parte da empresa Rocketseat.",
+      "type": "invite",
+      "date": "2023-06-27T14:20:00.000Z",
+      "asRead": false
+    },
+    {
+      "id": "67266e38-1422-11ee-be56-0242ac120002",
+      "description": "Você foi mencionado no tópico \"NextJS é o novo PHP?\", por Diego Fernandes.",
+      "type": "forum",
+      "date": "2023-06-27T14:15:00.000Z",
+      "asRead": false
+    },
+    {
+      "id": "6f804ae0-1422-11ee-be56-0242ac120002",
+      "description": "Flávia Oliveira e mais 5 pessoas gostaram do seu comentário.",
+      "type": "feed",
+      "date": "2023-06-18T06:53:20.000Z",
+      "asRead": false
+    },
+    {
+      "id": "732819fc-1422-11ee-be56-0242ac120002",
+      "description": "Novas aulas disponíveis no Ignite React JS. Venha conferir!",
+      "type": "new-content",
+      "date": "2023-06-17T01:07:10.000Z",
+      "asRead": true
+    }
+  ]
+}
