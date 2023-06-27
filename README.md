@@ -2,7 +2,7 @@
 
 ## Descrição
 
-Projeto desenvolvido para estudo e aplicação de um widget de notificações seguindo o tutorial apresentado pelo Diego Fernandes da **[Rocketseat](https://www.youtube.com/@rocketseat).**, com a implementação de tecnologias que vão além das abordadas no vídeo **[Criando widget de notificações com Tailwind (+ tema light/dark)](https://www.youtube.com/watch?v=4qpgwR6JZPY&ab_channel=Rocketseat).** como:
+Projeto desenvolvido para estudo e aplicação de um widget de notificações seguindo o tutorial apresentado pelo Diego Fernandes da **[Rocketseat](https://www.youtube.com/@rocketseat)**, com a implementação de tecnologias que vão além das abordadas no vídeo **[Criando widget de notificações com Tailwind (+ tema light/dark)](https://www.youtube.com/watch?v=4qpgwR6JZPY&ab_channel=Rocketseat)** como:
 
 ## Requisitos
 
