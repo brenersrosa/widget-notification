@@ -11,7 +11,7 @@ export function WidgetIcon({ type, asRead = false }: WidgetIconProps) {
     <div className="relative">
       <div
         className={clsx('', {
-          'absolute -right-2 top-2 h-2 w-2 rounded-full bg-red-500': asRead,
+          'absolute -right-2 top-2 h-2 w-2 rounded-full bg-red-500': !asRead,
         })}
       ></div>
       {type === 'new-content' && (

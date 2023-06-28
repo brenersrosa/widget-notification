@@ -26,8 +26,6 @@ export function Widget() {
       })
   }, [])
 
-  console.log(notifications)
-
   const handleMouseEnter = (notificationId: string) => {
     setHoveredItem(notificationId)
   }
@@ -57,7 +55,7 @@ export function Widget() {
     }
   }
 
-  async function handleToggleIsActive(notificationId: string) {
+  async function handleNotificationAsRead(notificationId: string) {
     const updatedNotification = notifications.map(async (notification) => {
       if (notification.id === notificationId) {
         const newStatus = notification.asRead !== true
@@ -85,11 +83,39 @@ export function Widget() {
     setNotifications(updatedNotificationsData)
   }
 
+  async function markAllNotificationsAsRead(
+    notifications: NotificationProps[],
+  ): Promise<NotificationProps[]> {
+    const updatedNotifications: NotificationProps[] = []
+
+    for (const notification of notifications) {
+      const newNotification: NotificationProps = {
+        ...notification,
+        asRead: true,
+      }
+
+      try {
+        await api.put(`/notifications/${notification.id}`, newNotification)
+        updatedNotifications.push(newNotification)
+      } catch (error) {
+        console.log(`Error updating notification ${notification.id}:`, error)
+        updatedNotifications.push(notification)
+      }
+    }
+
+    setNotifications(updatedNotifications)
+
+    return updatedNotifications
+  }
+
   return (
     <div className="w-[448px] overflow-hidden rounded">
       <div className="flex items-center justify-between bg-zinc-200 px-6 py-4 dark:bg-zinc-800">
         <span className="font-bold">Notificações</span>
-        <button className="flex items-center gap-2 text-xs font-bold uppercase text-violet-500 transition-colors hover:text-violet-400">
+        <button
+          onClick={() => markAllNotificationsAsRead(notifications)}
+          className="flex items-center gap-2 text-xs font-bold uppercase text-violet-500 transition-colors hover:text-violet-400"
+        >
           Marcar todas como lidas <CheckCheck className="h-4 w-4" />
         </button>
       </div>
@@ -147,7 +173,9 @@ export function Widget() {
                       <ButtonActions
                         variant="check"
                         asRead={notification.asRead}
-                        onClick={() => handleToggleIsActive(notification.id)}
+                        onClick={() =>
+                          handleNotificationAsRead(notification.id)
+                        }
                       />
                     </div>
                   )}
@@ -214,7 +242,9 @@ export function Widget() {
                       <ButtonActions
                         variant="check"
                         asRead={notification.asRead}
-                        onClick={() => handleToggleIsActive(notification.id)}
+                        onClick={() =>
+                          handleNotificationAsRead(notification.id)
+                        }
                       />
                     </div>
                   )}

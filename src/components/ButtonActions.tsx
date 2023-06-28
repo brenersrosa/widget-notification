@@ -26,7 +26,7 @@ export function ButtonActions({
     >
       {variant === 'close' ? (
         <X className="h-3 text-zinc-50" />
-      ) : asRead ? (
+      ) : !asRead ? (
         <Check className="h-3 text-zinc-50" />
       ) : (
         <Mail className="h-3 text-zinc-50" />
